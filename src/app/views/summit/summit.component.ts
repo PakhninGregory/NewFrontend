@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-summit',
   templateUrl: './summit.component.html',
-  styleUrls: ['./summit.component.css']
+  styleUrls: ['./summit.component.scss']
 })
 export class SummitComponent implements OnInit {
 

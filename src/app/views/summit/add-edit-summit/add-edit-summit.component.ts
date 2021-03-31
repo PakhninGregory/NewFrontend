@@ -7,7 +7,7 @@ import {SummitAlp} from '../../../core/models/SummitAlp';
 @Component({
   selector: 'app-add-edit-summit',
   templateUrl: './add-edit-summit.component.html',
-  styleUrls: ['./add-edit-summit.component.css']
+  styleUrls: ['./add-edit-summit.component.scss']
 })
 
 export class AddEditSummitComponent implements OnInit {

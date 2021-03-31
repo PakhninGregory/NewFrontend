@@ -6,7 +6,7 @@ import {SummitService} from '../../../core/services/Summit.service';
 @Component({
   selector: 'app-show-summit',
   templateUrl: './show-summit.component.html',
-  styleUrls: ['./show-summit.component.css']
+  styleUrls: ['./show-summit.component.scss']
 })
 export class ShowSummitComponent implements OnInit {
 
@@ -86,6 +86,8 @@ export class ShowSummitComponent implements OnInit {
             elem.alpinists.forEach(el => el.ascentDate = new Date(el.ascentDate));
           });
         }
+
+        this.SummitList.sort((n1, n2) => n1.id - n2.id);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

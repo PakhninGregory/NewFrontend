@@ -13,11 +13,13 @@ import { ShowAlpsComponent } from './views/summit-alps/show-alps/show-alps.compo
 import { AddEditAlpsComponent } from './views/summit-alps/add-edit-alps/add-edit-alps.component';
 import { CartesianComponent } from './views/cartesian/cartesian.component';
 import { ShowSystemComponent } from './views/cartesian/show-system/show-system.component';
-import { AddEditSystemComponent } from './views/cartesian/add-edit-system/add-edit-system.component';
 import { SummitService } from './core/services/Summit.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ResponsibilityComponent } from './views/responsibility/responsibility.component';
+import {AddSystemComponent} from './views/cartesian/add-system/add-system.component';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     AddEditAlpsComponent,
     CartesianComponent,
     ShowSystemComponent,
-    AddEditSystemComponent
+    AddSystemComponent,
+    ResponsibilityComponent
   ],
   imports: [
     AppRoutingModule,
@@ -41,7 +44,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [SummitService],
+  providers: [SummitService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

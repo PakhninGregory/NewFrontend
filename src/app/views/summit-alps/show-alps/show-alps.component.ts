@@ -7,7 +7,7 @@ import {Summit} from '../../../core/models/Summit';
 @Component({
   selector: 'app-show-alps',
   templateUrl: './show-alps.component.html',
-  styleUrls: ['./show-alps.component.css']
+  styleUrls: ['./show-alps.component.scss']
 })
 export class ShowAlpsComponent implements OnInit {
 
@@ -19,6 +19,7 @@ export class ShowAlpsComponent implements OnInit {
   ModalTitle: string;
   ActivateAddEditComp = false;
   emp: any;
+  editDate: Date;
 
   ngOnInit(): void {
     this.refreshList();
@@ -31,7 +32,7 @@ export class ShowAlpsComponent implements OnInit {
       lastName: '',
       firstName: '',
       middleName: '',
-      ascentDate: '',
+      ascentDate: new Date(),
     };
     this.ModalTitle = 'Add Summit\'s Alpinist';
     this.ActivateAddEditComp = true;
@@ -39,7 +40,7 @@ export class ShowAlpsComponent implements OnInit {
   }
 
   editClick(item): void{
-    console.log(item);
+    this.editDate = new Date(item.ascentDate);
     this.emp = item;
     this.ModalTitle = 'Edit Summit\'s Alpinist';
     this.ActivateAddEditComp = true;
@@ -73,6 +74,8 @@ export class ShowAlpsComponent implements OnInit {
                 alp.ascentDate = new Date(alp.ascentDate);
                 this.AlpsList.push(alp);
               }
+
+              this.AlpsList.sort((n1, n2) => (n1.id - n2.id));
             },
             (error) => {
               alert(error.message);

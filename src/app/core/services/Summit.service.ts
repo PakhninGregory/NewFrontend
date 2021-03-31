@@ -33,12 +33,12 @@ export class SummitService{
     return this.http.get<any>(`${environment.APIUrl}/summits/${summitId}/names`);
   }
 
-  addSummitName(summitName: any): Observable<any>{
-    return this.http.put<any>(`${environment.APIUrl}/summits/${summitName.submitId}`, summitName);
+  addSummitName(summitId: any, summitName: any): Observable<any>{
+    return this.http.post<any>(`${environment.APIUrl}/summits/${summitId}/names`, summitName);
   }
 
-  updateSummitName(summitName: any): Observable<any>{
-    return this.http.post<any>(`${environment.APIUrl}/summits/${summitName.summitId}/names/${summitName.id}`, summitName);
+  updateSummitName(summitId: any, objId: any, summitName: any): Observable<any>{
+    return this.http.put<any>(`${environment.APIUrl}/summits/${summitId}/names/${objId}`, summitName);
   }
 
   deleteSummitName(summitId: string, nameId: string): Observable<any>{
@@ -51,12 +51,13 @@ export class SummitService{
     return this.http.get<any>(`${environment.APIUrl}/summits/${summitId}/alps`);
   }
 
-  addSummitAlp(summitAlp: any): Observable<any>{
-    return this.http.put<any>(`${environment.APIUrl}/summits/${summitAlp.summitId}/alps/${summitAlp.id}`, summitAlp);
+  addSummitAlp(summitId: any, summitAlp: any): Observable<any>{
+    console.log(summitAlp);
+    return this.http.post<any>(`${environment.APIUrl}/summits/${summitId}/alps`, summitAlp);
   }
 
-  updateSummitAlp(summitAlp: any): Observable<any>{
-    return this.http.post<any>(`${environment.APIUrl}/summits/${summitAlp.summitId}/alps/${summitAlp.id}`, summitAlp);
+  updateSummitAlp(summitId: any, summitAlp: any): Observable<any>{
+    return this.http.put<any>(`${environment.APIUrl}/summits/${summitId}/alps/${summitAlp.id}`, summitAlp);
   }
 
   deleteSummitAlp(summitId: string, alpId: string): Observable<any>{
