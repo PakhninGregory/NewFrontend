@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
 import {SummitService} from '../../../core/services/Summit.service';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-add-edit-alps',
@@ -9,46 +10,43 @@ import {SummitService} from '../../../core/services/Summit.service';
 })
 export class AddEditAlpsComponent implements OnInit {
 
-  constructor(private service: SummitService) { }
+  constructor(private service: SummitService, private datePipe: DatePipe) { }
 
   @Input() emp: any;
 
   SummitIdList: number[];
 
-  AlpId: string;
-  SummitId: string;
+  AlpId: number;
+  SummitId: number;
   AlpLastName: string;
   AlpFirstName: string;
   AlpMiddleName: string;
-  AlpAscentDate: Date;
+  AlpAscentDate: string;
 
   init(): void{
     this.service.getSummitsList().subscribe(
       (data) => {
-        this.SummitIdList = data.map(el => el.Id);
+        this.SummitIdList = data.map(el => el.id);
 
         this.AlpId = this.emp.id;
         this.SummitId = this.emp.summitId;
         this.AlpLastName =  this.emp.lastName;
         this.AlpFirstName = this.emp.firstName;
         this.AlpMiddleName = this.emp.middleName;
-        this.AlpAscentDate = this.emp.ascentDate;
-        console.log(this.emp);
+        this.AlpAscentDate = this.datePipe.transform(this.emp.ascentDate, 'yyyy-MM-dd');
       }
     );
   }
 
   addAlp(): void{
     const val = {
-      id: this.AlpId,
-      summitId: this.SummitId,
-      lastName:  this.emp.lastName,
-      firstName: this.emp.firstName,
-      middleName: this.emp.middleName,
-      ascentDate: new Date (this.emp.ascentDate),
+      lastName:  this.AlpLastName,
+      firstName: this.AlpFirstName,
+      middleName: this.AlpMiddleName,
+      ascentDate: new Date (this.AlpAscentDate).toISOString(),
     };
 
-    this.service.addSummitAlp(val).subscribe(
+    this.service.addSummitAlp(this.SummitId, val).subscribe(
       (res: any) => {
         alert('Объект создан! Для обновления закройте форму создания.');
       },
@@ -60,14 +58,13 @@ export class AddEditAlpsComponent implements OnInit {
   updateAlp(): void{
     const val = {
       id: this.AlpId,
-      summitId: this.SummitId,
-      lastName:  this.emp.lastName,
-      firstName: this.emp.firstName,
-      middleName: this.emp.middleName,
-      ascentDate: new Date (this.emp.ascentDate),
+      lastName:  this.AlpLastName,
+      firstName: this.AlpFirstName,
+      middleName: this.AlpMiddleName,
+      ascentDate: new Date (this.AlpAscentDate).toISOString(),
     };
 
-    this.service.updateSummit(val).subscribe(
+    this.service.updateSummitAlp(this.SummitId, val).subscribe(
       (res: HttpErrorResponse) => {
         alert(`Объект ${val.id} успешно обновлен!`);
       },

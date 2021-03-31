@@ -86,6 +86,8 @@ export class ShowSummitComponent implements OnInit {
             elem.alpinists.forEach(el => el.ascentDate = new Date(el.ascentDate));
           });
         }
+
+        this.SummitList.sort((n1, n2) => n1.id - n2.id);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
