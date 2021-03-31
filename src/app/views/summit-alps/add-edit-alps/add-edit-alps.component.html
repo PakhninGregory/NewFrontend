@@ -2,34 +2,37 @@
 
   <div class="form-froup row" style="width: 60%;">
 
-    <label class="col-sm-2 col-form-label">Summit Id</label>
+    <label class="col-sm-2 col-form-label">Summit id</label>
     <div class="col-sm-10">
-      <input type="number" class="form-control" [(ngModel)]="SummitId"
-             placeholder="Enter Summit Id">
+      <select class="form-control" [(ngModel)]="SummitId">
+        <option *ngFor="let sumId of SummitIdList">
+          {{sumId}}
+        </option>
+      </select>
     </div>
 
-    <label class="col-sm-2 col-form-label">Summit Longitude</label>
+
+    <label class="col-sm-2 col-form-label">Alp last name</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="AlpLastName"
              placeholder="Enter Summit Longitude">
     </div>
 
-    <label class="col-sm-2 col-form-label">Summit Latitude</label>
+    <label class="col-sm-2 col-form-label">Alp first name</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="AlpFirstName"
              placeholder="Enter Summit Latitude">
     </div>
 
-    <label class="col-sm-2 col-form-label">Summit Height</label>
+    <label class="col-sm-2 col-form-label">Alp middle name</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="AlpMiddleName"
              placeholder="Enter Summit Height">
     </div>
 
-    <label class="col-sm-2 col-form-label">Summit Height</label>
+    <label class="col-sm-2 col-form-label">Alp ascent date</label>
     <div class="col-sm-10">
-      <input type="date" class="form-control" [(ngModel)]="AlpAscentDate"
-             placeholder="Enter Summit Height">
+      <input type="date"  [(ngModel)]="AlpAscentDate">
     </div>
 
   </div>
@@ -41,10 +44,10 @@
 </div>
 
 
-<button (click)="addAlp()" *ngIf="SummitId == '0'" class="btn btn-primary">
+<button (click)="addAlp()" *ngIf="AlpId == 0" class="btn btn-primary">
   Add
 </button>
 
-<button (click)="updateAlp()" *ngIf="SummitId != '0'" class="btn btn-primary">
+<button (click)="updateAlp()" *ngIf="AlpId != 0" class="btn btn-primary">
   Update
 </button>

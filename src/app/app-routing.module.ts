@@ -4,6 +4,7 @@ import {SummitComponent} from './views/summit/summit.component';
 import {SummitNamesComponent} from './views/summit-names/summit-names.component';
 import {SummitAlpsComponent} from './views/summit-alps/summit-alps.component';
 import {CartesianComponent} from './views/cartesian/cartesian.component';
+import {ResponsibilityComponent} from './views/responsibility/responsibility.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'names', component: SummitNamesComponent },
   { path: 'alps', component: SummitAlpsComponent },
   { path: 'cartesian', component: CartesianComponent },
+  { path: 'responsibility', component: ResponsibilityComponent },
 ];
 
 @NgModule({

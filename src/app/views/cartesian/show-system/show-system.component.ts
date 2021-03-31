@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'node_modules/chart.js';
+import {HttpErrorResponse} from '@angular/common/http';
+import {CartesianService} from '../../../core/services/Cartesian.service';
 
 @Component({
   selector: 'app-show-system',
@@ -7,9 +9,13 @@ import { Chart } from 'node_modules/chart.js';
 })
 export class ShowSystemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: CartesianService) { }
 
   dataSets: any[];
+  ModalTitle: string;
+  ActivateAddEditComp: boolean;
+  obj: any;
+
   ngOnInit(): void {
     this.dataSets = [
       {
@@ -26,14 +32,46 @@ export class ShowSystemComponent implements OnInit {
     this.createChart();
   }
 
-  addPoint(): void{
-    // console.log(this.myChart);
-    // this.createChart();
+  addClick(): void{
+    this.obj = {
+      id: 0,
+      x: 0,
+      y: 0,
+    };
+    this.ModalTitle = 'Add Point';
+    this.ActivateAddEditComp = true;
   }
 
-  removePoint(): void{
-    // console.log(this.myChart);
-    // this.createChart();
+  editClick(item): void{
+    this.obj = item;
+    this.ModalTitle = 'Edit Point';
+    this.ActivateAddEditComp = true;
+  }
+
+  deleteClick(item): void{
+    if (confirm('Вы уверены, что хотите удалить эту точку?')){
+      this.service.deletePoint(item.id).subscribe(
+        (error: HttpErrorResponse) => {
+          this.refreshList();
+        },
+      );
+    }
+  }
+
+  closeClick(): void{
+    this.ActivateAddEditComp = false;
+    // this.refreshList();
+  }
+
+  refreshList(): void{
+    this.service.getPointList().subscribe(
+      (data: any) => {
+
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
   createChart(): void{

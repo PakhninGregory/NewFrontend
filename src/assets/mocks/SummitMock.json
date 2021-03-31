@@ -22,9 +22,9 @@
     "alpinists":[
       {
         "id":1,
-        "firstname":"Mike",
-        "lastname":"Sazonov",
-        "middlename":"Sergeevich",
+        "firstName":"Mike",
+        "lastName":"Sazonov",
+        "middleName":"Sergeevich",
         "ascentDate":"2021-03-21"
       }
     ]
@@ -52,9 +52,9 @@
     "alpinists":[
       {
         "id":2,
-        "firstname":"Mike",
-        "lastname":"Severilov",
-        "middlename":"Sergeevich",
+        "firstName":"Mike",
+        "lastName":"Severilov",
+        "middleName":"Sergeevich",
         "ascentDate":"2021-03-21"
       }
     ]
