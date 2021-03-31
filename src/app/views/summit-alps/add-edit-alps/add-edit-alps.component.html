@@ -1,0 +1,50 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+  <div class="form-froup row" style="width: 60%;">
+
+    <label class="col-sm-2 col-form-label">Summit Id</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" [(ngModel)]="SummitId"
+             placeholder="Enter Summit Id">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Summit Longitude</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="AlpLastName"
+             placeholder="Enter Summit Longitude">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Summit Latitude</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="AlpFirstName"
+             placeholder="Enter Summit Latitude">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Summit Height</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="AlpMiddleName"
+             placeholder="Enter Summit Height">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Summit Height</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" [(ngModel)]="AlpAscentDate"
+             placeholder="Enter Summit Height">
+    </div>
+
+  </div>
+
+  <div class="ml-3 bd-highlight" style="width: 40%;">
+    <img src="assets/images/placeholder.jfif" alt="" height="250px;" width="150px;">
+  </div>
+
+</div>
+
+
+<button (click)="addAlp()" *ngIf="SummitId == '0'" class="btn btn-primary">
+  Add
+</button>
+
+<button (click)="updateAlp()" *ngIf="SummitId != '0'" class="btn btn-primary">
+  Update
+</button>

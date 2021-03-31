@@ -1,0 +1,16 @@
+[
+  {
+    "id":1,
+    "mainland":"Europe",
+    "latitude":100,
+    "longitude":200,
+    "height":300
+  },
+  {
+    "id":2,
+    "mainland":"Europe",
+    "latitude":200,
+    "longitude":300,
+    "height":400
+  }
+]
