@@ -23,6 +23,41 @@ export class ShowSummitComponent implements OnInit {
     this.refreshList();
   }
 
+
+
+  sort(): void{
+    this.service.getSummitsList().subscribe(
+      (data: any) => {
+        this.SummitList = data as Summit[];
+
+        // @ts-ignore
+        this.SummitList.sort((n1, n2) => n1.mainland - n2.mainland);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  // sort(buba): void{
+  //   this.service.getSummitsList().subscribe(
+  //     (data: any) => {
+  //       this.SummitList = data as Summit[];
+  //       if (this.SummitList[0].buba >= this.SummitList[1].buba){
+  //         this.SummitList.sort((n1, n2) => n2.buba - n1.buba);
+  //       }
+  //       else {
+  //         this.SummitList.sort((n1, n2) => n1.buba - n2.buba);
+  //       }
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
+
+
+
   addClick(): void{
     this.emp = {
       id: 0,
