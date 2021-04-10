@@ -19,19 +19,50 @@ export class ShowSummitComponent implements OnInit {
   emp: any;
   infoSummit: Summit;
 
+  SummitIdFilter: string="";
+  SummitNameFilter: string="";
+  SummitListWithoutFilter: any=[];
+
+
   ngOnInit(): void {
     this.refreshList();
   }
 
 
 
-  sort(): void{
+  sort(ev): void {
+    console.log(ev);
     this.service.getSummitsList().subscribe(
       (data: any) => {
         this.SummitList = data as Summit[];
 
-        // @ts-ignore
-        this.SummitList.sort((n1, n2) => n1.mainland - n2.mainland);
+
+        let condition = (n1, n2) => (n1).localeCompare(n2);
+
+        this.SummitList.sort((n1, n2) => n1.id - n2.id);
+
+        this.SummitList.sort(condition);
+
+        const cond: number = 1;
+        switch (cond) {
+          case 0: {
+            condition = (n1, n2) => (n1).localeCompare(n2);
+
+            break;
+          }
+          case 1: {
+            condition = (n1, n2) => n1.id - n2.id;
+
+
+            break;
+          }
+          default: {
+
+            break;
+          }
+
+
+        }
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -110,19 +141,8 @@ export class ShowSummitComponent implements OnInit {
     this.service.getSummitsList().subscribe(
       (data: any) => {
         this.SummitList = data as Summit[];
-        for (const elem of this.SummitList){
-          this.service.getSummitNamesList(elem.id.toString()).subscribe(names => {
-            elem.names = names;
-            elem.names.forEach(el => el.summitId = elem.id);
-          });
-          this.service.getSummitAlpsList(elem.id.toString()).subscribe(alps => {
-            elem.alpinists = alps;
-            elem.alpinists.forEach(el => el.summitId = elem.id);
-            elem.alpinists.forEach(el => el.ascentDate = new Date(el.ascentDate));
-          });
-        }
-
         this.SummitList.sort((n1, n2) => n1.id - n2.id);
+        this.SummitListWithoutFilter = data as Summit[];
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -149,4 +169,31 @@ export class ShowSummitComponent implements OnInit {
     }
     return lT;
   }
+
+
+  FilterFn(){
+    let SummitIdFilter = this.SummitIdFilter;
+    let SummitNameFilter = this.SummitNameFilter;
+
+    this.SummitList = this.SummitListWithoutFilter.filter(function (el){
+      return el.SummitId.toString().toLowerCase().includes(
+        SummitIdFilter.toString().trim().toLowerCase()
+        )&&
+        el.SummitName.toString().toLowerCase().includes(
+          SummitNameFilter.toString().trim().toLowerCase()
+        )
+    });
+  }
+  //
+  // sortResult(prop,asc){
+  //   this.DepartmentList = this.DepartmentListWithoutFilter.sort(function(a,b){
+  //     if(asc){
+  //       return (a[prop]>b[prop])?1 : ((a[prop]<b[prop]) ?-1 :0);
+  //     }else{
+  //       return (b[prop]>a[prop])?1 : ((b[prop]<a[prop]) ?-1 :0);
+  //     }
+  //   })
+  // }
+  //
+
 }
