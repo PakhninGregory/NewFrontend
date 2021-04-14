@@ -59,7 +59,7 @@
   <tr>
     <th>
       <div  class="wrapper">
-        <input [(ngModel)]="SummitIdFilter" class="form-control"
+        <input [(ngModel)]="filterobj[0]" class="form-control"
                (keyup)="FilterFn()" placeholder="Filter">
 
 
@@ -67,13 +67,13 @@
 
 
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort($event)">
+              (click)="sort('id')">
         Id
     </button>
     </th>
     <th>
       <div  class="wrapper">
-        <input [(ngModel)]="SummitNameFilter" class="form-control"
+        <input [(ngModel)]="filterobj[1]" class="form-control"
                (keyup)="FilterFn()" placeholder="Filter">
 
 
@@ -81,48 +81,65 @@
 
 
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort($event)">
+              (click)="sort('mainland')">
         Mainland
       </button>
     </th>
     <th>
       <div  class="wrapper">
-        <input [(ngModel)]="SummitIdFilter" class="form-control"
+        <input [(ngModel)]="filterobj[2]" class="form-control"
                (keyup)="FilterFn()" placeholder="Filter">
 
 
       </div>
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort($event)">
+              (click)="sort('latitude')">
         Latitude
       </button>
     </th>
     <th>
       <div  class="wrapper">
-        <input [(ngModel)]="SummitIdFilter" class="form-control"
+        <input [(ngModel)]="filterobj[3]" class="form-control"
                (keyup)="FilterFn()" placeholder="Filter">
 
 
       </div>
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort($event)">
+              (click)="sort('longitude')">
         Longitude
       </button>
       </th>
     <th>
       <div  class="wrapper">
-        <input [(ngModel)]="SummitIdFilter" class="form-control"
+        <input [(ngModel)]="filterobj[4]" class="form-control"
                (keyup)="FilterFn()" placeholder="Filter">
 
 
       </div>
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort($event)">
+              (click)="sort('height')">
         Height
       </button>
     </th>
-    <th>Options</th>
+
+    <th>
+
+      <div  class="wrapper">
+        <button type="button" class="btn btn-outline-danger"
+                (click)="FilterClear()">
+          Clear filters
+        </button>
+
+      </div>
+      <h3><span class="badge badge-pill badge-primary m-2">Options</span></h3>
+
+      </th>
+
   </tr>
+
+
+
+
   </thead>
   <tbody>
   <tr *ngFor="let dataItem of SummitList">

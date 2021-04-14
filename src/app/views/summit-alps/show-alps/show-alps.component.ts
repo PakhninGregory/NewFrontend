@@ -3,6 +3,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 import {SummitAlp} from '../../../core/models/SummitAlp';
 import {SummitService} from '../../../core/services/Summit.service';
 import {Summit} from '../../../core/models/Summit';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-show-alps',
@@ -14,12 +15,17 @@ export class ShowAlpsComponent implements OnInit {
   SummitIds: number[];
   AlpsList: SummitAlp[];
 
-  constructor(private service: SummitService) { }
+  constructor(private service: SummitService, private dataPipe: DatePipe) { }
+  filterobj: any[]  = ['', '', '', '', '', ''];
 
   ModalTitle: string;
   ActivateAddEditComp = false;
   emp: any;
   editDate: Date;
+
+  AlpsListWithoutFilter: any = [];
+  check = false;
+
 
   ngOnInit(): void {
     this.refreshList();
@@ -63,6 +69,7 @@ export class ShowAlpsComponent implements OnInit {
 
   public refreshList(): void {
     this.AlpsList = [];
+    this.AlpsListWithoutFilter = [];
     this.service.getSummitsList().subscribe(
       (data: Summit[]) => {
         this.SummitIds = data.map(el => el.id);
@@ -73,9 +80,9 @@ export class ShowAlpsComponent implements OnInit {
                 alp.summitId = el;
                 alp.ascentDate = new Date(alp.ascentDate);
                 this.AlpsList.push(alp);
+                this.AlpsListWithoutFilter.push(alp);
               }
 
-              this.AlpsList.sort((n1, n2) => (n1.id - n2.id));
             },
             (error) => {
               alert(error.message);
@@ -86,6 +93,45 @@ export class ShowAlpsComponent implements OnInit {
       (error) => {
         alert(error.message);
       });
+  }
+
+  FilterClear() {
+    for (let i = 0; i < this.filterobj.length; i++) {
+      this.filterobj[i] = '';
+    }
+    this.FilterFn();
+  }
+
+  sort(buba): void {
+
+    this.AlpsList = this.AlpsList?.sort((n1, n2) =>
+      (typeof n1[buba] === 'string' ?
+        n2[buba].localeCompare(n1[buba]) : (n2[buba] > n1[buba] ? -1 : 1)) * (this.check ? 1 : -1));
+
+    this.check = !this.check;
+  }
+  FilterFn(){
+    let dataPipe = this.dataPipe;
+    let objList : string [] = ['id', 'summitId', 'lastName', 'firstName', 'middleName', 'ascentDate'];
+    let filterobject = this.filterobj;
+    this.AlpsList = this.AlpsListWithoutFilter.filter(function (el){
+      let result = true;
+      for (let i = 0; i < filterobject.length; i++){
+        if (!(typeof filterobject[i] !== 'undefined' && filterobject)){
+          console.log('empty');
+          continue;
+        }
+        const element = el[objList[i]];
+        const incStr = (typeof element === 'object' ?
+          dataPipe.transform(element, 'dd.MM.yyyy').toLowerCase().trim() :
+          element.toString().toLowerCase().trim());
+        result = result && incStr.startsWith(filterobject[i]?.toString().trim().toLowerCase());
+
+        if (!result)
+          break;
+      }
+      return result;
+    });
   }
 }
 

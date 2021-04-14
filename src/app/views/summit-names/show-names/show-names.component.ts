@@ -10,6 +10,7 @@ import {SummitName} from '../../../core/models/SummitName';
   styleUrls: ['./show-names.component.scss']
 })
 export class ShowNamesComponent implements OnInit {
+  filterobj: any[]  = ['', '', ''];
 
   SummitIds: number[];
   NameList: SummitName[];
@@ -19,9 +20,45 @@ export class ShowNamesComponent implements OnInit {
   ModalTitle: string;
   ActivateAddEditComp = false;
   emp: any;
-
+  NameListWithoutFilter: any = [];
+  check = false;
   ngOnInit(): void {
     this.refreshList();
+  }
+
+  sort(buba): void {
+
+    this.NameList = this.NameList?.sort((n1, n2) =>
+      (typeof n1[buba] === 'string' ? n2[buba].localeCompare(n1[buba]) : (n2[buba] > n1[buba] ? -1 : 1)) * (this.check ? 1 : -1));
+
+    this.check = !this.check;
+  }
+
+  FilterClear() {
+    for (let i = 0; i < this.filterobj.length; i++) {
+      this.filterobj[i] = '';
+    }
+    this.FilterFn();
+  }
+
+
+  FilterFn(){
+    let objList : string [] = ['id', 'summitId', 'summitName'];
+    let filterobject = this.filterobj;
+    this.NameList = this.NameListWithoutFilter.filter(function (el){
+      let result = true;
+      for (let i = 0; i < filterobject.length; i++){
+        if (!(typeof filterobject[i] !== 'undefined' && filterobject)){
+          console.log('empty');
+          continue;
+        }
+
+        result = result && el[objList[i]]?.toString().toLowerCase().startsWith(filterobject[i]?.toString().trim().toLowerCase());
+        if (!result)
+          break;
+      }
+      return result;
+    });
   }
 
   addClick(): void{
@@ -66,9 +103,9 @@ export class ShowNamesComponent implements OnInit {
               for (const alp of alps){
                 alp.summitId = el;
                 this.NameList.push(alp);
+                this.NameListWithoutFilter.push(alp);
               }
 
-              this.NameList.sort((n1, n2) => n1.id - n2.id);
             },
             (error) => {
               alert(error.message);

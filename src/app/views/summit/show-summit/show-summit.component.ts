@@ -10,82 +10,29 @@ import {SummitService} from '../../../core/services/Summit.service';
 })
 export class ShowSummitComponent implements OnInit {
 
-  SummitList: Summit[] = [];
-
   constructor(private service: SummitService) { }
+  filterobj: any[]  = ['', '', '', '', ''];
+
+  SummitList: Summit[] = [];
 
   ModalTitle: string;
   ActivateAddEditComp = false;
   emp: any;
   infoSummit: Summit;
 
-  SummitIdFilter: string="";
-  SummitNameFilter: string="";
-  SummitListWithoutFilter: any=[];
-
-
+  SummitListWithoutFilter: any = [];
+  check = false;
   ngOnInit(): void {
     this.refreshList();
   }
 
+  sort(buba): void {
 
+    this.SummitList = this.SummitList?.sort((n1, n2) =>
+      (typeof n1[buba] === 'string' ? n2[buba].localeCompare(n1[buba]) : (n2[buba] > n1[buba] ? -1 : 1)) * (this.check ? 1 : -1));
 
-  sort(ev): void {
-    console.log(ev);
-    this.service.getSummitsList().subscribe(
-      (data: any) => {
-        this.SummitList = data as Summit[];
-
-
-        let condition = (n1, n2) => (n1).localeCompare(n2);
-
-        this.SummitList.sort((n1, n2) => n1.id - n2.id);
-
-        this.SummitList.sort(condition);
-
-        const cond: number = 1;
-        switch (cond) {
-          case 0: {
-            condition = (n1, n2) => (n1).localeCompare(n2);
-
-            break;
-          }
-          case 1: {
-            condition = (n1, n2) => n1.id - n2.id;
-
-
-            break;
-          }
-          default: {
-
-            break;
-          }
-
-
-        }
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
+    this.check = !this.check;
   }
-
-  // sort(buba): void{
-  //   this.service.getSummitsList().subscribe(
-  //     (data: any) => {
-  //       this.SummitList = data as Summit[];
-  //       if (this.SummitList[0].buba >= this.SummitList[1].buba){
-  //         this.SummitList.sort((n1, n2) => n2.buba - n1.buba);
-  //       }
-  //       else {
-  //         this.SummitList.sort((n1, n2) => n1.buba - n2.buba);
-  //       }
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //     }
-  //   );
-  // }
 
 
 
@@ -141,7 +88,6 @@ export class ShowSummitComponent implements OnInit {
     this.service.getSummitsList().subscribe(
       (data: any) => {
         this.SummitList = data as Summit[];
-        this.SummitList.sort((n1, n2) => n1.id - n2.id);
         this.SummitListWithoutFilter = data as Summit[];
       },
       (error: HttpErrorResponse) => {
@@ -150,12 +96,12 @@ export class ShowSummitComponent implements OnInit {
     );
   }
 
-  public getAlpinistData(summitId: number): string{
-    if (summitId == null){
+  public getAlpinistData(id: number): string{
+    if (id == null){
       return ' ';
     }
 
-    const curSum: Summit = this.SummitList.find(el => el.id === summitId);
+    const curSum: Summit = this.SummitList.find(el => el.id === id);
     let lT = ' ';
 
     if (curSum == null){
@@ -170,30 +116,31 @@ export class ShowSummitComponent implements OnInit {
     return lT;
   }
 
+  FilterClear() {
+    for (let i = 0; i < this.filterobj.length; i++) {
+      this.filterobj[i] = '';
+    }
+    this.FilterFn();
+  }
+
 
   FilterFn(){
-    let SummitIdFilter = this.SummitIdFilter;
-    let SummitNameFilter = this.SummitNameFilter;
-
+    let objList : string [] = ['id', 'mainland', 'latitude', 'longitude', 'height'];
+    let filterobject = this.filterobj;
     this.SummitList = this.SummitListWithoutFilter.filter(function (el){
-      return el.SummitId.toString().toLowerCase().includes(
-        SummitIdFilter.toString().trim().toLowerCase()
-        )&&
-        el.SummitName.toString().toLowerCase().includes(
-          SummitNameFilter.toString().trim().toLowerCase()
-        )
+      let result = true;
+      for (let i = 0; i < filterobject.length; i++){
+        if (!(typeof filterobject[i] !== 'undefined' && filterobject)){
+          console.log('empty');
+          continue;
+        }
+
+        result = result && el[objList[i]]?.toString().toLowerCase().startsWith(filterobject[i]?.toString().trim().toLowerCase());
+        if (!result)
+          break;
+      }
+      return result;
     });
   }
-  //
-  // sortResult(prop,asc){
-  //   this.DepartmentList = this.DepartmentListWithoutFilter.sort(function(a,b){
-  //     if(asc){
-  //       return (a[prop]>b[prop])?1 : ((a[prop]<b[prop]) ?-1 :0);
-  //     }else{
-  //       return (b[prop]>a[prop])?1 : ((b[prop]<a[prop]) ?-1 :0);
-  //     }
-  //   })
-  // }
-  //
 
 }

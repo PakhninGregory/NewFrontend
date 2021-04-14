@@ -27,11 +27,57 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Id</th>
-    <th>SummitId</th>
-    <th>Summit's name</th>
-    <th>Options</th>
+    <th>
+      <div  class="wrapper">
+        <input [(ngModel)]="filterobj[0]" class="form-control"
+               (keyup)="FilterFn()" placeholder="Filter">
+      </div>
+
+
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')">
+        Id
+      </button>
+    </th>
+    <th>
+      <div  class="wrapper">
+        <input [(ngModel)]="filterobj[1]" class="form-control"
+               (keyup)="FilterFn()" placeholder="Filter">
+
+
+      </div>
+
+
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('summitId')">
+        SummitId
+      </button>
+    </th>
+    <th>
+      <div  class="wrapper">
+        <input [(ngModel)]="filterobj[2]" class="form-control"
+               (keyup)="FilterFn()" placeholder="Filter">
+
+
+      </div>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('summitName')">
+        Summit's name
+      </button>
+    </th>
+
+    <th>
+      <div  class="wrapper">
+        <button type="button" class="btn btn-outline-danger"
+                (click)="FilterClear()">
+          Clear filters
+        </button>
+      </div>
+      <h3><span class="badge badge-pill badge-primary m-2">Options</span></h3>
+    </th>
   </tr>
+
+
   </thead>
   <tbody>
   <tr *ngFor="let dataItem of NameList">
