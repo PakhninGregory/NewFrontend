@@ -5,5 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'Фронтенд версии 0.0.2';
+  localesList: object = [
+    { code: 'en-US', label: 'EN'},
+    { code: 'ru', label: 'RU'}
+  ];
 }

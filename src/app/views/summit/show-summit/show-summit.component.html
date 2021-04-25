@@ -1,7 +1,7 @@
 <button type="button" class="btn btn-primary float-right m-2"
         data-toggle="modal" data-target="#exampleModal"
         data-backdrop="static" data-keyboard="false"
-        (click)="addClick()" i18n="show-summit|Button for adding a summit@@addSummit">
+        (click)="addClick()" i18n="show-summit|Button to add a summit@@addSummit">
   Add summit
 </button>
 <!--<th>-->
@@ -17,7 +17,7 @@
   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" i18n>{{ModalTitle}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
         <button type="button" class="close"
                 data-dismiss="modal" aria-label="Close"
                 (click)="closeClick()" >
@@ -62,10 +62,6 @@
         <input [(ngModel)]="filterobj[0]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')" i18n="show-summit|Button for sort by Id@@summitButtonId">
-        Id
-      </button>
     </th>
 
     <th>
@@ -73,11 +69,6 @@
         <input [(ngModel)]="filterobj[1]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('mainland')" i18n="show-summit|Button for sort by Mainland@@summitButtonMainland">
-        Mainland
-      </button>
     </th>
 
     <th>
@@ -85,10 +76,6 @@
         <input [(ngModel)]="filterobj[2]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('latitude')" i18n="show-summit|Button for sort by Latitude@@summitButtonLatitude">
-        Latitude
-      </button>
     </th>
 
     <th>
@@ -96,10 +83,6 @@
         <input [(ngModel)]="filterobj[3]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('longitude')" i18n="show-summit|Button for sort by Longitude@@summitButtonLongitude">
-        Longitude
-      </button>
     </th>
 
     <th>
@@ -107,20 +90,56 @@
         <input [(ngModel)]="filterobj[4]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('height')" i18n="show-summit|Button for sort by Height@@summitButtonHeight">
-        Height
-      </button>
     </th>
 
     <th>
       <div  class="wrapper">
         <button type="button" class="btn btn-outline-danger"
-                (click)="FilterClear()" i18n="show-summit|Button for clear filters@@summitButtonClearFilters">
+                (click)="FilterClear()" i18n="@@clearFiltersButton">
           Clear filters
         </button>
       </div>
-      <h3><span class="badge badge-pill badge-primary m-2" i18n>Options</span></h3>
+    </th>
+  </tr>
+
+  <tr>
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')" i18n="show-summit|Button to sort by id@@show-summitIdButton">
+        Id
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('mainland')" i18n="show-summit|Button to sort by mainland@@mainlandButton">
+        Mainland
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('latitude')" i18n="show-summit|Button to sort by latitude@@latitudeButton">
+        Latitude
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('longitude')" i18n="show-summit|Button to sort by longitude@@longitudeButton">
+        Longitude
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('height')" i18n="show-summit|Button to sort by height@@heightButton">
+        Height
+      </button>
+    </th>
+
+    <th>
+
     </th>
   </tr>
 
@@ -168,7 +187,10 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="summitInfoModalLabel" i18n="detailed summit info|Detailed Summit information for certain summit@@detailedSummitInfo">Detailed Summit information for summit {{infoSummit?.names?.length > 0 ? infoSummit?.names[0].summitName : infoSummit?.id}}</h5>
+        <h5 class="modal-title" id="summitInfoModalLabel"
+            i18n="detailed summit info|Detailed information of summit@@detailedSummitInfo">
+          Detailed summit information for summit {{infoSummit?.names?.length > 0 ? infoSummit?.names[0].summitName : infoSummit?.id}}
+        </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -179,28 +201,29 @@
             <app-names-info-field [names]="infoSummit?.names"></app-names-info-field>
           </div>
           <div class="form-group">
-            <label for="mainland" i18n>New mainland</label>
+            <label for="mainland" i18n="share-summit|New summit's mainland@@newMainlandLabel">New mainland</label>
             <input type="text" ngModel="{{infoSummit?.mainland}}" name="mainland" class="form-control" id="mainland" placeholder="{{infoSummit?.mainland}}">
           </div>
           <div class="form-group">
-            <label for="latitude" i18n>New latitude</label>
+            <label for="latitude" i18n="expand summit|New summit's latitude@@newLatitudeLabel">New latitude</label>
             <input type="text" ngModel="{{infoSummit?.latitude}}" name="latitude" class="form-control" id="latitude" placeholder="{{infoSummit?.latitude}}">
           </div>
           <div class="form-group">
-            <label for="longitude" i18n>New longitude</label>
+            <label for="longitude" i18n="expand summit|New summit's longitude@@newLongitudeLabel">New longitude</label>
             <input type="text" ngModel="{{infoSummit?.longitude}}" name="longitude" class="form-control" id="longitude" placeholder="{{infoSummit?.longitude}}">
           </div>
           <div class="form-group">
-            <label for="height" i18n>New height</label>
+            <label for="height" i18n="expand summit|New summit's height@@newHeightLabel">New height</label>
             <input type="text" ngModel="{{infoSummit?.height}}" name="height" class="form-control" id="height" placeholder="{{infoSummit?.height}}">
           </div>
           <div class="form-group" *ngIf="infoSummit?.alpinists?.length > 0">
-            <label for="height" i18n="List of all alpinists of certain summit@@summitAlpsList">All alpinists</label>
+            <label for="height" i18n="expand summit|List of all alpinists of summit@@alpinistsLabel">Alpinists</label>
             <p></p>
             <label>{{getAlpinistData(infoSummit?.id)}}</label>
           </div>
           <div class="modal-footer">
-            <button type="button" id="" data-dismiss="modal" class="btn btn-secondary" i18n>Close</button>
+            <button type="button" id="" data-dismiss="modal" class="btn btn-secondary"
+                    i18n="@@closeButton">Close</button>
           </div>
         </form>
       </div>

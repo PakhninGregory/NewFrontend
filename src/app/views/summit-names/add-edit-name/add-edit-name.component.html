@@ -1,7 +1,7 @@
 <div class="d-flex flex-row bd-highlight mb-3">
   <div class="form-froup row" style="width: 60%;">
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit-name|Summit's id of certain summit's name@@nameSummitId">
+           i18n="add-edit-name|Summit's id of certain summit's name@@add-edit-nameSummitIdLabel">
       Summit's id
     </label>
     <div class="col-sm-10">
@@ -13,12 +13,12 @@
     </div>
 
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit-name|Summit's name@@nameSummitName">
+           i18n="add-edit-name|Summit's name@@summitNameLabel">
       Summit's name
     </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="SummitName"
-             i18n-placeholder placeholder="Enter summit's name">
+             i18n-placeholder placeholder="Input another name of summit...">
     </div>
   </div>
 
@@ -27,10 +27,12 @@
   </div>
 </div>
 
-<button (click)="addName()" *ngIf="NameId == '0'" class="btn btn-primary" i18n>
+<button (click)="addName()" *ngIf="NameId == '0'" class="btn btn-primary"
+        i18n="@@addButton">
   Add
 </button>
 
-<button (click)="updateName()" *ngIf="NameId != '0'" class="btn btn-primary" i18n>
+<button (click)="updateName()" *ngIf="NameId != '0'" class="btn btn-primary"
+        i18n="@@updateButton">
   Update
 </button>

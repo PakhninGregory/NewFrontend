@@ -1,7 +1,7 @@
 <div class="d-flex flex-row bd-highlight mb-3">
   <div class="form-froup row" style="width: 60%;">
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit-alps|Summit id of certain alpinist@@alpSummitId">
+           i18n="add-edit-alps|Summit id of alpinist@@add-edit-alpsSummitIdLabel">
       Summit's id
     </label>
     <div class="col-sm-10">
@@ -13,34 +13,34 @@
     </div>
 
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit-alps|Last name of certain alpinist@@alpLastName">
+           i18n="add-edit-alps|Last name of alpinist@@lastNameLabel">
       Last name
     </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="AlpLastName"
-             i18n-placeholder placeholder="Enter alpinist's last name">
+             i18n-placeholder placeholder="Input alpinist's last name...">
     </div>
 
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit-alps|First name of certain alpinist@@alpFirstName">
+           i18n="add-edit-alps|First name of alpinist@@firstNameLabel">
       First name
     </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="AlpFirstName"
-             i18n-placeholder placeholder="Enter alpinist's first name">
+             i18n-placeholder placeholder="Input alpinist's first name...">
     </div>
 
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit-alps|Middle name of certain alpinist@@alpMiddleName">
+           i18n="add-edit-alps|Middle name of alpinist@@middleNameLabel">
       Middle name
     </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="AlpMiddleName"
-             i18n-placeholder placeholder="Enter alpinist's middle name">
+             i18n-placeholder placeholder="Input alpinist's middle name...">
     </div>
 
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit-alps|Ascent date of certain alpinist@@alpAscentDate">
+           i18n="add-edit-alps|Ascent date of alpinist@@ascentDateLabel">
       Ascent date
     </label>
     <div class="col-sm-10">
@@ -54,10 +54,12 @@
   </div>
 </div>
 
-<button (click)="addAlp()" *ngIf="AlpId == 0" class="btn btn-primary" i18n>
+<button (click)="addAlp()" *ngIf="AlpId == 0" class="btn btn-primary"
+        i18n="@@addButton">
   Add
 </button>
 
-<button (click)="updateAlp()" *ngIf="AlpId != 0" class="btn btn-primary" i18n>
+<button (click)="updateAlp()" *ngIf="AlpId != 0" class="btn btn-primary"
+        i18n="@@updateButton">
   Update
 </button>

@@ -1,15 +1,15 @@
 <button type="button" class="btn btn-primary float-right m-2"
         data-toggle="modal" data-target="#exampleModal"
         data-backdrop="static" data-keyboard="false"
-        (click)="addClick()" i18n="show-alps|Button for adding alpinist to certain summit@@alpsButtonAdd">
-  Add summit's alpinist
+        (click)="addClick()" i18n="show-alps|Button to add alpinist to summit@@addAlpinistButton">
+  Add alpinist
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" i18n>{{ModalTitle}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
         <button type="button" class="close"
                 data-dismiss="modal" aria-label="Close"
                 (click)="closeClick()" >
@@ -32,10 +32,6 @@
         <input [(ngModel)]="filterobj[0]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')" i18n="show-alps|Button for sort by alpinist's id@@alpsButtonId">
-        Id
-      </button>
     </th>
 
     <th>
@@ -43,10 +39,6 @@
         <input [(ngModel)]="filterobj[1]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')" i18n="show-alps|Button for sort by alpinist's summit id@@alpsButtonSummitId">
-        Summit's id
-      </button>
     </th>
 
     <th>
@@ -54,10 +46,6 @@
         <input [(ngModel)]="filterobj[2]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')" i18n="show-alps|Button for sort by alpinist's last name@@alpsButtonLastName">
-        Last name
-      </button>
     </th>
 
     <th>
@@ -65,10 +53,6 @@
         <input [(ngModel)]="filterobj[3]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')" i18n="show-alps|Button for sort by alpinist's first name@@alpsButtonFirstName">
-        First name
-      </button>
     </th>
 
     <th>
@@ -76,10 +60,6 @@
         <input [(ngModel)]="filterobj[4]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')" i18n="show-alps|Button for sort by alpinist's middle name@@alpsButtonMiddleName">
-        Middle name
-      </button>
     </th>
 
     <th>
@@ -87,20 +67,63 @@
         <input [(ngModel)]="filterobj[5]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')" i18n="show-alps|Button for sort by alpinist's ascent date@@alpsButtonAscentDate">
-        Ascent date
-      </button>
     </th>
 
     <th>
       <div  class="wrapper">
         <button type="button" class="btn btn-outline-danger"
-                (click)="FilterClear()" i18n="show-alps|Button for clear all filters@@alpsButtonClearFilters">
+                (click)="FilterClear()" i18n="@@clearFiltersButton">
           Clear filters
         </button>
       </div>
-      <h3><span class="badge badge-pill badge-primary m-2" i18n>Options</span></h3>
+    </th>
+  </tr>
+
+  <tr>
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')" i18n="show-alps|Button to sort by alpinist's id@@show-alpsIdButton">
+        Id
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')" i18n="show-alps|Button to sort by alpinist's summit id@@show-alpsSummitIdButton">
+        Summit's id
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')" i18n="show-alps|Button to sort by alpinist's last name@@lastNameButton">
+        Last name
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')" i18n="show-alps|Button to sort by alpinist's first name@@firstNameButton">
+        First name
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')" i18n="show-alps|Button to sort by alpinist's middle name@@middleNameButton">
+        Middle name
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')" i18n="show-alps|Button to sort by alpinist's ascent date@@ascentDateButton">
+        Ascent date
+      </button>
+    </th>
+
+    <th>
+
     </th>
   </tr>
 

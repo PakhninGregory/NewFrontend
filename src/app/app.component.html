@@ -1,33 +1,55 @@
 <div class="container" id="main-container" xmlns="http://www.w3.org/1999/html">
   <div class="nav-container">
-    <h3 class="d-flex justify-content-center">{{title}} запущен!</h3>
-    <h5 class="d-flex justify-content-center">Management  Navigation Bar</h5>
+    <h3 class="d-flex justify-content-center" i18n="main|Static header@@staticHeader">Frontend is working!</h3>
+    <ul>
+      <li *ngFor="let locale of localesList">
+        <a href="/{{locale.code}}/">
+          {{locale.label}}
+        </a>
+      </li>
+    </ul>
+    <h5 class="d-flex justify-content-center" i18n="main|Static title control panel@@staticControlPanel">Control panel</h5>
 
     <nav class="navbar navbar-expand-sm navbar-dark justify-content-center">
       <ul class="navbar-nav">
         <li class="nav-item">
           <button routerLink="summits"
-                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button>All Summit</button>
+                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button
+                  i18n="main|Button to start work with summits@@summitsButton">
+            Summits
+          </button>
         </li>
 
         <li class="nav-item">
           <button routerLink="names"
-                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button>All Summit's names</button>
+                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button
+                  i18n="main|Button to start work with summits@@summitNamesButton">
+            Summit names
+          </button>
         </li>
 
         <li class="nav-item">
           <button routerLink="alps"
-                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button>All Summit alpinists</button>
+                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button
+                  i18n="main|Button to start work with alpinists@@alpinistsButton">
+            Alpinists
+          </button>
         </li>
 
         <li class="nav-item">
           <button routerLink="cartesian"
-                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button>Cartesian system</button>
+                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button
+                  i18n="main|Button to start work with polar system@@polarSystemButton">
+            Polar system
+          </button>
         </li>
 
         <li class="nav-item">
           <button routerLink="responsibility"
-                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button>Зоны ответственности</button>
+                  class="m-1 btn btn-light btn-outline-primary btn-lg" Button
+                  i18n="main|Button to start work with responsibility@@responsibilityButton">
+            Responsibility
+          </button>
         </li>
       </ul>
     </nav>

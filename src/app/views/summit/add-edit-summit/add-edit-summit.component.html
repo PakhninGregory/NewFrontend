@@ -1,39 +1,39 @@
 <div class="d-flex flex-row bd-highlight mb-3">
   <div class="form-froup row" style="width: 60%;">
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit summit|Mainland of summit@@summitMainland">
-      Summit's mainland
+           i18n="add-edit summit|Mainland of summit@@mainlandLabel">
+      Mainland
     </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="SummitMainland"
-             i18n-placeholder placeholder="Enter summit's mainland">
+             i18n-placeholder placeholder="Input summit's mainland...">
     </div>
 
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit summit|Longitude of summit@@summitLongitude">
-      Summit's longitude
-    </label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" [(ngModel)]="SummitLongitude"
-             i18n-placeholder placeholder="Enter summit's longitude">
-    </div>
-
-    <label class="col-sm-2 col-form-label"
-           i18n="add-edit summit|Latitude of summit@@summitLatitude">
-      Summit's latitude
+           i18n="add-edit summit|Latitude of summit@@latitudeLabel">
+      Latitude
     </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="SummitLatitude"
-             i18n-placeholder placeholder="Enter summit's latitude">
+             i18n-placeholder placeholder="Input summit's latitude...">
     </div>
 
     <label class="col-sm-2 col-form-label"
-           i18n="add-edit summit|Height of summit@@summitHeight">
-      Summit's height
+           i18n="add-edit summit|Longitude of summit@@longitudeLabel">
+      Longitude
+    </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="SummitLongitude"
+             i18n-placeholder placeholder="Input summit's longitude...">
+    </div>
+
+    <label class="col-sm-2 col-form-label"
+           i18n="add-edit summit|Height of summit@@heightLabel">
+      Height
     </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="SummitHeight"
-             i18n-placeholder placeholder="Enter summit's height">
+             i18n-placeholder placeholder="Input summit's height...">
     </div>
 
   </div>
@@ -43,10 +43,12 @@
   </div>
 </div>
 
-<button (click)="addSummit()" *ngIf="SummitId == '0'" class="btn btn-primary" i18n>
+<button (click)="addSummit()" *ngIf="SummitId == '0'" class="btn btn-primary"
+        i18n="@@addButton">
   Add
 </button>
 
-<button (click)="updateSummit()" *ngIf="SummitId != '0'" class="btn btn-primary" i18n>
+<button (click)="updateSummit()" *ngIf="SummitId != '0'" class="btn btn-primary"
+        i18n="@@updateButton">
   Update
 </button>

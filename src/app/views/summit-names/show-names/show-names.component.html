@@ -1,8 +1,8 @@
 <button type="button" class="btn btn-primary float-right m-2"
         data-toggle="modal" data-target="#exampleModal"
         data-backdrop="static" data-keyboard="false"
-        (click)="addClick()" i18n="show-names|Button for adding alpinist to certain summit@@nameButtonAddSummitAlpinist">
-  Add summit's alpinist
+        (click)="addClick()" i18n="show-names|Button to add another name to summit@@addAnotherNameButton">
+  Add another name
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -32,10 +32,6 @@
         <input [(ngModel)]="filterobj[0]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')" i18n="show-names|Button for sort by id@@nameButtonId">
-        Id
-      </button>
     </th>
 
     <th>
@@ -43,30 +39,49 @@
         <input [(ngModel)]="filterobj[1]" class="form-control"
                (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('summitId')" i18n="show-names|Button for sort by summit's id@@nameButtonSummitsId">
-        Summit's id
-      </button>
+
     </th>
     <th>
       <div  class="wrapper">
         <input [(ngModel)]="filterobj[2]" class="form-control"
                (keyup)="FilterFn()" placeholder="Filter">
       </div>
-      <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('summitName')" i18n="show-names|Button for sort by summit's name@@nameButtonSummitsName">
-        Summit's name
-      </button>
     </th>
 
     <th>
       <div  class="wrapper">
         <button type="button" class="btn btn-outline-danger"
-                (click)="FilterClear()" i18n="show-names|Button for clear all filters@@nameButtonClearFilters">
+                (click)="FilterClear()" i18n="@@clearFiltersButton">
           Clear filters
         </button>
       </div>
-      <h3><span class="badge badge-pill badge-primary m-2" i18n>Options</span></h3>
+    </th>
+  </tr>
+
+  <tr>
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('id')" i18n="show-names|Button to sort by id@@show-namesIdButton">
+        Id
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('summitId')" i18n="show-names|Button to sort by summit's id@@show-namesSummitIdButton">
+        Summit's id
+      </button>
+    </th>
+
+    <th>
+      <button type="button" class="btn btn-primary float-none m-2"
+              (click)="sort('summitName')" i18n="show-names|Button to sort by summit's name@@summitNameButton">
+        Summit's name
+      </button>
+    </th>
+
+    <th>
+
     </th>
   </tr>
 

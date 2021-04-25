@@ -15,7 +15,7 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
-          "ru": "src/i18n/messages.ru.xlf"
+          "ru": "src/locales/messages.ru.xlf"
         }
       },
       "architect": {
