@@ -40,7 +40,7 @@ export class ShowAlpsComponent implements OnInit {
       middleName: '',
       ascentDate: new Date(),
     };
-    this.ModalTitle = 'Add Summit\'s Alpinist';
+    this.ModalTitle = 'Add summit\'s alpinist';
     this.ActivateAddEditComp = true;
     console.log(this.emp);
   }
@@ -48,7 +48,7 @@ export class ShowAlpsComponent implements OnInit {
   editClick(item): void{
     this.editDate = new Date(item.ascentDate);
     this.emp = item;
-    this.ModalTitle = 'Edit Summit\'s Alpinist';
+    this.ModalTitle = 'Edit summit\'s alpinist';
     this.ActivateAddEditComp = true;
   }
 
@@ -102,11 +102,11 @@ export class ShowAlpsComponent implements OnInit {
     this.FilterFn();
   }
 
-  sort(buba): void {
+  sort(field): void {
 
     this.AlpsList = this.AlpsList?.sort((n1, n2) =>
-      (typeof n1[buba] === 'string' ?
-        n2[buba].localeCompare(n1[buba]) : (n2[buba] > n1[buba] ? -1 : 1)) * (this.check ? 1 : -1));
+      (typeof n1[field] === 'string' ?
+        n2[field].localeCompare(n1[field]) : (n2[field] > n1[field] ? -1 : 1)) * (this.check ? 1 : -1));
 
     this.check = !this.check;
   }

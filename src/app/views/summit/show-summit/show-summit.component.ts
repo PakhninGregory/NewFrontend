@@ -26,10 +26,10 @@ export class ShowSummitComponent implements OnInit {
     this.refreshList();
   }
 
-  sort(buba): void {
+  sort(field): void {
 
     this.SummitList = this.SummitList?.sort((n1, n2) =>
-      (typeof n1[buba] === 'string' ? n2[buba].localeCompare(n1[buba]) : (n2[buba] > n1[buba] ? -1 : 1)) * (this.check ? 1 : -1));
+      (typeof n1[field] === 'string' ? n2[field].localeCompare(n1[field]) : (n2[field] > n1[field] ? -1 : 1)) * (this.check ? 1 : -1));
 
     this.check = !this.check;
   }
@@ -44,7 +44,7 @@ export class ShowSummitComponent implements OnInit {
       longitude: '',
       height: '',
     };
-    this.ModalTitle = 'Add Summit';
+    this.ModalTitle = 'Add summit';
     this.ActivateAddEditComp = true;
     console.log(this.emp);
   }
@@ -52,7 +52,7 @@ export class ShowSummitComponent implements OnInit {
   editClick(item): void{
     console.log(item);
     this.emp = item;
-    this.ModalTitle = 'Edit Summit';
+    this.ModalTitle = 'Edit summit';
     this.ActivateAddEditComp = true;
   }
 

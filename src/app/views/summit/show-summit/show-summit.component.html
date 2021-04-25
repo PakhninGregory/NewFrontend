@@ -1,8 +1,8 @@
 <button type="button" class="btn btn-primary float-right m-2"
         data-toggle="modal" data-target="#exampleModal"
         data-backdrop="static" data-keyboard="false"
-        (click)="addClick()">
-  Add Summit
+        (click)="addClick()" i18n="show-summit|Button for adding a summit@@addSummit">
+  Add summit
 </button>
 <!--<th>-->
 <!--  <button type="button" class="btn btn-primary float-right m-2"-->
@@ -17,7 +17,7 @@
   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel" i18n>{{ModalTitle}}</h5>
         <button type="button" class="close"
                 data-dismiss="modal" aria-label="Close"
                 (click)="closeClick()" >
@@ -60,85 +60,69 @@
     <th>
       <div  class="wrapper">
         <input [(ngModel)]="filterobj[0]" class="form-control"
-               (keyup)="FilterFn()" placeholder="Filter">
-
-
+               (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
-
-
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('id')">
+              (click)="sort('id')" i18n="show-summit|Button for sort by Id@@summitButtonId">
         Id
-    </button>
+      </button>
     </th>
+
     <th>
       <div  class="wrapper">
         <input [(ngModel)]="filterobj[1]" class="form-control"
-               (keyup)="FilterFn()" placeholder="Filter">
-
-
+               (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
 
-
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('mainland')">
+              (click)="sort('mainland')" i18n="show-summit|Button for sort by Mainland@@summitButtonMainland">
         Mainland
       </button>
     </th>
+
     <th>
       <div  class="wrapper">
         <input [(ngModel)]="filterobj[2]" class="form-control"
-               (keyup)="FilterFn()" placeholder="Filter">
-
-
+               (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('latitude')">
+              (click)="sort('latitude')" i18n="show-summit|Button for sort by Latitude@@summitButtonLatitude">
         Latitude
       </button>
     </th>
+
     <th>
       <div  class="wrapper">
         <input [(ngModel)]="filterobj[3]" class="form-control"
-               (keyup)="FilterFn()" placeholder="Filter">
-
-
+               (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('longitude')">
+              (click)="sort('longitude')" i18n="show-summit|Button for sort by Longitude@@summitButtonLongitude">
         Longitude
       </button>
-      </th>
+    </th>
+
     <th>
       <div  class="wrapper">
         <input [(ngModel)]="filterobj[4]" class="form-control"
-               (keyup)="FilterFn()" placeholder="Filter">
-
-
+               (keyup)="FilterFn()" i18n-placeholder placeholder="Filter">
       </div>
       <button type="button" class="btn btn-primary float-none m-2"
-              (click)="sort('height')">
+              (click)="sort('height')" i18n="show-summit|Button for sort by Height@@summitButtonHeight">
         Height
       </button>
     </th>
 
     <th>
-
       <div  class="wrapper">
         <button type="button" class="btn btn-outline-danger"
-                (click)="FilterClear()">
+                (click)="FilterClear()" i18n="show-summit|Button for clear filters@@summitButtonClearFilters">
           Clear filters
         </button>
-
       </div>
-      <h3><span class="badge badge-pill badge-primary m-2">Options</span></h3>
-
-      </th>
-
+      <h3><span class="badge badge-pill badge-primary m-2" i18n>Options</span></h3>
+    </th>
   </tr>
-
-
-
 
   </thead>
   <tbody>
@@ -184,7 +168,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="summitInfoModalLabel">Detailed Summit information for summit {{infoSummit?.names?.length > 0 ? infoSummit?.names[0].summitName : infoSummit?.id}}</h5>
+        <h5 class="modal-title" id="summitInfoModalLabel" i18n="detailed summit info|Detailed Summit information for certain summit@@detailedSummitInfo">Detailed Summit information for summit {{infoSummit?.names?.length > 0 ? infoSummit?.names[0].summitName : infoSummit?.id}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -195,28 +179,28 @@
             <app-names-info-field [names]="infoSummit?.names"></app-names-info-field>
           </div>
           <div class="form-group">
-            <label for="mainland">New mainland</label>
+            <label for="mainland" i18n>New mainland</label>
             <input type="text" ngModel="{{infoSummit?.mainland}}" name="mainland" class="form-control" id="mainland" placeholder="{{infoSummit?.mainland}}">
           </div>
           <div class="form-group">
-            <label for="latitude">New latitude</label>
+            <label for="latitude" i18n>New latitude</label>
             <input type="text" ngModel="{{infoSummit?.latitude}}" name="latitude" class="form-control" id="latitude" placeholder="{{infoSummit?.latitude}}">
           </div>
           <div class="form-group">
-            <label for="longitude">New longitude</label>
+            <label for="longitude" i18n>New longitude</label>
             <input type="text" ngModel="{{infoSummit?.longitude}}" name="longitude" class="form-control" id="longitude" placeholder="{{infoSummit?.longitude}}">
           </div>
           <div class="form-group">
-            <label for="height">New height</label>
+            <label for="height" i18n>New height</label>
             <input type="text" ngModel="{{infoSummit?.height}}" name="height" class="form-control" id="height" placeholder="{{infoSummit?.height}}">
           </div>
           <div class="form-group" *ngIf="infoSummit?.alpinists?.length > 0">
-            <label for="height">All alpinists</label>
+            <label for="height" i18n="List of all alpinists of certain summit@@summitAlpsList">All alpinists</label>
             <p></p>
             <label>{{getAlpinistData(infoSummit?.id)}}</label>
           </div>
           <div class="modal-footer">
-            <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+            <button type="button" id="" data-dismiss="modal" class="btn btn-secondary" i18n>Close</button>
           </div>
         </form>
       </div>
