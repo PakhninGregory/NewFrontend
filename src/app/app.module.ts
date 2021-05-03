@@ -20,6 +20,10 @@ import { FormsModule } from '@angular/forms';
 import { ResponsibilityComponent } from './views/responsibility/responsibility.component';
 import {AddSystemComponent} from './views/cartesian/add-system/add-system.component';
 import {DatePipe} from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+import localeRuExtra from '@angular/common/locales/extra/ru';
+registerLocaleData(localeRu, 'ru', localeRuExtra);
 
 @NgModule({
   declarations: [

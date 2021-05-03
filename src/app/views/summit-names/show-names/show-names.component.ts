@@ -26,10 +26,10 @@ export class ShowNamesComponent implements OnInit {
     this.refreshList();
   }
 
-  sort(buba): void {
+  sort(field): void {
 
     this.NameList = this.NameList?.sort((n1, n2) =>
-      (typeof n1[buba] === 'string' ? n2[buba].localeCompare(n1[buba]) : (n2[buba] > n1[buba] ? -1 : 1)) * (this.check ? 1 : -1));
+      (typeof n1[field] === 'string' ? n2[field].localeCompare(n1[field]) : (n2[field] > n1[field] ? -1 : 1)) * (this.check ? 1 : -1));
 
     this.check = !this.check;
   }

@@ -1,29 +1,39 @@
 <div class="d-flex flex-row bd-highlight mb-3">
-
   <div class="form-froup row" style="width: 60%;">
-
-    <label class="col-sm-2 col-form-label">Summit Mainland</label>
+    <label class="col-sm-2 col-form-label"
+           i18n="add-edit summit|Mainland of summit@@mainlandLabel">
+      Mainland
+    </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="SummitMainland"
-             placeholder="Enter Summit Mainland">
+             i18n-placeholder placeholder="Input summit's mainland...">
     </div>
 
-    <label class="col-sm-2 col-form-label">Summit Longitude</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" [(ngModel)]="SummitLongitude"
-             placeholder="Enter Summit Longitude">
-    </div>
-
-    <label class="col-sm-2 col-form-label">Summit Latitude</label>
+    <label class="col-sm-2 col-form-label"
+           i18n="add-edit summit|Latitude of summit@@latitudeLabel">
+      Latitude
+    </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="SummitLatitude"
-             placeholder="Enter Summit Latitude">
+             i18n-placeholder placeholder="Input summit's latitude...">
     </div>
 
-    <label class="col-sm-2 col-form-label">Summit Height</label>
+    <label class="col-sm-2 col-form-label"
+           i18n="add-edit summit|Longitude of summit@@longitudeLabel">
+      Longitude
+    </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="SummitLongitude"
+             i18n-placeholder placeholder="Input summit's longitude...">
+    </div>
+
+    <label class="col-sm-2 col-form-label"
+           i18n="add-edit summit|Height of summit@@heightLabel">
+      Height
+    </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]="SummitHeight"
-             placeholder="Enter Summit Height">
+             i18n-placeholder placeholder="Input summit's height...">
     </div>
 
   </div>
@@ -31,14 +41,14 @@
   <div class="ml-3 bd-highlight" style="width: 40%;">
     <img src="assets/images/placeholder.jfif" height="250px;" width="200px;">
   </div>
-
 </div>
 
-
-<button (click)="addSummit()" *ngIf="SummitId == '0'" class="btn btn-primary">
+<button (click)="addSummit()" *ngIf="SummitId == '0'" class="btn btn-primary"
+        i18n="@@addButton">
   Add
 </button>
 
-<button (click)="updateSummit()" *ngIf="SummitId != '0'" class="btn btn-primary">
+<button (click)="updateSummit()" *ngIf="SummitId != '0'" class="btn btn-primary"
+        i18n="@@updateButton">
   Update
 </button>

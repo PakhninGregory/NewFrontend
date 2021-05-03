@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="staticHeader" datatype="html">
+        <source>Frontend is working! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Static header</note>
+        <note priority="1" from="meaning">main</note>
+      </trans-unit>
+      <trans-unit id="staticControlPanel" datatype="html">
+        <source>Control panel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Static title control panel</note>
+        <note priority="1" from="meaning">main</note>
+      </trans-unit>
+      <trans-unit id="summitsButton" datatype="html">
+        <source> Summits </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <note priority="1" from="description">Button to start work with summits</note>
+        <note priority="1" from="meaning">main</note>
+      </trans-unit>
+      <trans-unit id="summitNamesButton" datatype="html">
+        <source> Summit names </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+        <note priority="1" from="description">Button to start work with summits</note>
+        <note priority="1" from="meaning">main</note>
+      </trans-unit>
+      <trans-unit id="alpinistsButton" datatype="html">
+        <source> Alpinists </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <note priority="1" from="description">Button to start work with alpinists</note>
+        <note priority="1" from="meaning">main</note>
+      </trans-unit>
+      <trans-unit id="polarSystemButton" datatype="html">
+        <source> Polar system </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+        <note priority="1" from="description">Button to start work with polar system</note>
+        <note priority="1" from="meaning">main</note>
+      </trans-unit>
+      <trans-unit id="responsibilityButton" datatype="html">
+        <source> Responsibility </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+        <note priority="1" from="description">Button to start work with responsibility</note>
+        <note priority="1" from="meaning">main</note>
+      </trans-unit>
+      <trans-unit id="add-edit-alpsSummitIdLabel" datatype="html">
+        <source> Summit&apos;s id </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <note priority="1" from="description">Summit id of alpinist</note>
+        <note priority="1" from="meaning">add-edit-alps</note>
+      </trans-unit>
+      <trans-unit id="lastNameLabel" datatype="html">
+        <source> Last name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <note priority="1" from="description">Last name of alpinist</note>
+        <note priority="1" from="meaning">add-edit-alps</note>
+      </trans-unit>
+      <trans-unit id="911457907168099289" datatype="html">
+        <source>Input alpinist&apos;s last name...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="firstNameLabel" datatype="html">
+        <source> First name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+        <note priority="1" from="description">First name of alpinist</note>
+        <note priority="1" from="meaning">add-edit-alps</note>
+      </trans-unit>
+      <trans-unit id="4384294743788210821" datatype="html">
+        <source>Input alpinist&apos;s first name...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="middleNameLabel" datatype="html">
+        <source> Middle name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <note priority="1" from="description">Middle name of alpinist</note>
+        <note priority="1" from="meaning">add-edit-alps</note>
+      </trans-unit>
+      <trans-unit id="4491173845523928498" datatype="html">
+        <source>Input alpinist&apos;s middle name...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ascentDateLabel" datatype="html">
+        <source> Ascent date </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+        <note priority="1" from="description">Ascent date of alpinist</note>
+        <note priority="1" from="meaning">add-edit-alps</note>
+      </trans-unit>
+      <trans-unit id="addButton" datatype="html">
+        <source> Add
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">59,60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/add-edit-name/add-edit-name.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="updateButton" datatype="html">
+        <source> Update
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/add-edit-alps/add-edit-alps.component.html</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/add-edit-name/add-edit-name.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addAlpinistButton" datatype="html">
+        <source> Add alpinist
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <note priority="1" from="description">Button to add alpinist to summit</note>
+        <note priority="1" from="meaning">show-alps</note>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ModalTitle}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/show-names/show-names.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8829497237648100098" datatype="html">
+        <source>Filter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/show-names/show-names.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/show-names/show-names.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clearFiltersButton" datatype="html">
+        <source> Clear filters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">76,77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/show-names/show-names.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">99,100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="show-alpsIdButton" datatype="html">
+        <source> Id </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">86,87</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by alpinist&apos;s id</note>
+        <note priority="1" from="meaning">show-alps</note>
+      </trans-unit>
+      <trans-unit id="show-alpsSummitIdButton" datatype="html">
+        <source> Summit&apos;s id </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">93,94</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by alpinist&apos;s summit id</note>
+        <note priority="1" from="meaning">show-alps</note>
+      </trans-unit>
+      <trans-unit id="lastNameButton" datatype="html">
+        <source> Last name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">100,101</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by alpinist&apos;s last name</note>
+        <note priority="1" from="meaning">show-alps</note>
+      </trans-unit>
+      <trans-unit id="firstNameButton" datatype="html">
+        <source> First name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">107,108</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by alpinist&apos;s first name</note>
+        <note priority="1" from="meaning">show-alps</note>
+      </trans-unit>
+      <trans-unit id="middleNameButton" datatype="html">
+        <source> Middle name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">114,115</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by alpinist&apos;s middle name</note>
+        <note priority="1" from="meaning">show-alps</note>
+      </trans-unit>
+      <trans-unit id="ascentDateButton" datatype="html">
+        <source> Ascent date </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-alps/show-alps/show-alps.component.html</context>
+          <context context-type="linenumber">121,122</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by alpinist&apos;s ascent date</note>
+        <note priority="1" from="meaning">show-alps</note>
+      </trans-unit>
+      <trans-unit id="add-edit-nameSummitIdLabel" datatype="html">
+        <source> Summit&apos;s id </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/add-edit-name/add-edit-name.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <note priority="1" from="description">Summit&apos;s id of certain summit&apos;s name</note>
+        <note priority="1" from="meaning">add-edit-name</note>
+      </trans-unit>
+      <trans-unit id="summitNameLabel" datatype="html">
+        <source> Summit&apos;s name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/add-edit-name/add-edit-name.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <note priority="1" from="description">Summit&apos;s name</note>
+        <note priority="1" from="meaning">add-edit-name</note>
+      </trans-unit>
+      <trans-unit id="527549170630556520" datatype="html">
+        <source>Input another name of summit...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/add-edit-name/add-edit-name.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addAnotherNameButton" datatype="html">
+        <source> Add another name
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/show-names/show-names.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <note priority="1" from="description">Button to add another name to summit</note>
+        <note priority="1" from="meaning">show-names</note>
+      </trans-unit>
+      <trans-unit id="show-namesIdButton" datatype="html">
+        <source> Id </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/show-names/show-names.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by id</note>
+        <note priority="1" from="meaning">show-names</note>
+      </trans-unit>
+      <trans-unit id="show-namesSummitIdButton" datatype="html">
+        <source> Summit&apos;s id </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/show-names/show-names.component.html</context>
+          <context context-type="linenumber">72,73</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by summit&apos;s id</note>
+        <note priority="1" from="meaning">show-names</note>
+      </trans-unit>
+      <trans-unit id="summitNameButton" datatype="html">
+        <source> Summit&apos;s name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit-names/show-names/show-names.component.html</context>
+          <context context-type="linenumber">79,80</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by summit&apos;s name</note>
+        <note priority="1" from="meaning">show-names</note>
+      </trans-unit>
+      <trans-unit id="mainlandLabel" datatype="html">
+        <source> Mainland </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <note priority="1" from="description">Mainland of summit</note>
+        <note priority="1" from="meaning">add-edit summit</note>
+      </trans-unit>
+      <trans-unit id="7818873489361255578" datatype="html">
+        <source>Input summit&apos;s mainland...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="latitudeLabel" datatype="html">
+        <source> Latitude </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+        <note priority="1" from="description">Latitude of summit</note>
+        <note priority="1" from="meaning">add-edit summit</note>
+      </trans-unit>
+      <trans-unit id="6065820082110214193" datatype="html">
+        <source>Input summit&apos;s latitude...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="longitudeLabel" datatype="html">
+        <source> Longitude </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+        <note priority="1" from="description">Longitude of summit</note>
+        <note priority="1" from="meaning">add-edit summit</note>
+      </trans-unit>
+      <trans-unit id="3102856500389887524" datatype="html">
+        <source>Input summit&apos;s longitude...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="heightLabel" datatype="html">
+        <source> Height </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+        <note priority="1" from="description">Height of summit</note>
+        <note priority="1" from="meaning">add-edit summit</note>
+      </trans-unit>
+      <trans-unit id="7631546262464737837" datatype="html">
+        <source>Input summit&apos;s height...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/add-edit-summit/add-edit-summit.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addSummit" datatype="html">
+        <source> Add summit
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <note priority="1" from="description">Button to add a summit</note>
+        <note priority="1" from="meaning">show-summit</note>
+      </trans-unit>
+      <trans-unit id="show-summitIdButton" datatype="html">
+        <source> Id </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">109,110</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by id</note>
+        <note priority="1" from="meaning">show-summit</note>
+      </trans-unit>
+      <trans-unit id="mainlandButton" datatype="html">
+        <source> Mainland </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">116,117</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by mainland</note>
+        <note priority="1" from="meaning">show-summit</note>
+      </trans-unit>
+      <trans-unit id="latitudeButton" datatype="html">
+        <source> Latitude </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">123,124</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by latitude</note>
+        <note priority="1" from="meaning">show-summit</note>
+      </trans-unit>
+      <trans-unit id="longitudeButton" datatype="html">
+        <source> Longitude </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">130,131</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by longitude</note>
+        <note priority="1" from="meaning">show-summit</note>
+      </trans-unit>
+      <trans-unit id="heightButton" datatype="html">
+        <source> Height </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">137,138</context>
+        </context-group>
+        <note priority="1" from="description">Button to sort by height</note>
+        <note priority="1" from="meaning">show-summit</note>
+      </trans-unit>
+      <trans-unit id="detailedSummitInfo" datatype="html">
+        <source> Detailed summit information for summit <x id="INTERPOLATION" equiv-text="{{infoSummit?.names?.length &gt; 0 ? infoSummit?.names[0].summitName : infoSummit?.id}}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">191,193</context>
+        </context-group>
+        <note priority="1" from="description">Detailed information of summit</note>
+        <note priority="1" from="meaning">detailed summit info</note>
+      </trans-unit>
+      <trans-unit id="newMainlandLabel" datatype="html">
+        <source>New mainland</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">204</context>
+        </context-group>
+        <note priority="1" from="description">New summit&apos;s mainland</note>
+        <note priority="1" from="meaning">share-summit</note>
+      </trans-unit>
+      <trans-unit id="newLatitudeLabel" datatype="html">
+        <source>New latitude</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">208</context>
+        </context-group>
+        <note priority="1" from="description">New summit&apos;s latitude</note>
+        <note priority="1" from="meaning">expand summit</note>
+      </trans-unit>
+      <trans-unit id="newLongitudeLabel" datatype="html">
+        <source>New longitude</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">212</context>
+        </context-group>
+        <note priority="1" from="description">New summit&apos;s longitude</note>
+        <note priority="1" from="meaning">expand summit</note>
+      </trans-unit>
+      <trans-unit id="newHeightLabel" datatype="html">
+        <source>New height</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">216</context>
+        </context-group>
+        <note priority="1" from="description">New summit&apos;s height</note>
+        <note priority="1" from="meaning">expand summit</note>
+      </trans-unit>
+      <trans-unit id="alpinistsLabel" datatype="html">
+        <source>Alpinists</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">220</context>
+        </context-group>
+        <note priority="1" from="description">List of all alpinists of summit</note>
+        <note priority="1" from="meaning">expand summit</note>
+      </trans-unit>
+      <trans-unit id="closeButton" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/views/summit/show-summit/show-summit.component.html</context>
+          <context context-type="linenumber">226</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
